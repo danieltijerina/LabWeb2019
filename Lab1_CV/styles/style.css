@@ -1,0 +1,81 @@
+body {
+    font-family: Verdana;
+    background-image: url(../assets/backg.jpg)
+}
+
+header {
+    background-size: cover;
+    background-position: center center;
+    background-image: url(../assets/typewriter.jpg);
+    background-repeat: no-repeat;
+    height: 600px;
+    color: whitesmoke;
+}
+
+#headerData {
+    padding: 80px;
+    font-size: 40px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#pic {
+    height: 200px;
+    float: left;
+    margin-left: 100px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+}
+
+#bioDesc {
+    font-family: 'Lexend Zetta', sans-serif;
+    text-align: center;
+    padding: 0px 300px;
+    padding-top: 60px;
+}
+
+img {
+    height: 80px;
+    justify-content: center;
+}
+
+.bio {
+    overflow: hidden;
+}
+
+.content {
+    padding: 15px;
+}
+
+.center {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+}
+
+.education img {
+    height: 120px;
+}
+
+.col {
+    flex: 50%;
+    border: 1px solid #42579c;
+    border-radius: 5px;
+    margin: 20px;
+    background-color: whitesmoke;
+}
+
+.position {
+    font-style: italic;
+}
+
+.title {
+    margin-bottom: 1px;
+    font-size: 20px;
+}
+
+.position {
+    margin-top: 0px;
+    font-style: italic;
+}
