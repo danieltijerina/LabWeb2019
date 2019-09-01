@@ -1,6 +1,9 @@
 function toggleCheck(element) {
     if (element.checked) {
         element.nextSibling.classList.add("done");
+        // Moves the selected item to the end of the list.
+        let items = document.getElementById("items");
+        items.append(element.parentElement);
     } else {
         element.nextSibling.classList.remove("done");
     }
