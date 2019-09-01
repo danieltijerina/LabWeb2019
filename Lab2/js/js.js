@@ -10,6 +10,10 @@ function toggleCheck(element) {
 }
 
 function addElement(chore) {
+    // Validation so no empty items are added to list.
+    if (!chore) {
+        return;
+    }
     let list = document.getElementById("items");
     let node = document.createElement("li");
     let input = document.createElement("input");
