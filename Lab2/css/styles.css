@@ -51,3 +51,20 @@ input[type="text"]:focus {
   text-decoration: line-through;
   color: #8f919c; 
 }
+
+.center {
+  text-align: center;
+}
+
+button {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  text-align: center;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #c82333;
+  border-color: #bd2130;
+}

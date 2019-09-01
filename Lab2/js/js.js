@@ -9,6 +9,20 @@ function toggleCheck(element) {
     }
 }
 
+function removeChecked() {
+    let list = document.getElementById("items");
+    let items = list.children;
+    var remove = [];
+    for (var item of items) {
+        if(item.firstChild.checked) {
+            remove.push(item);
+        }
+    }
+    for (var item of remove){
+        list.removeChild(item);
+    }
+}
+
 function addElement(chore) {
     // Validation so no empty items are added to list.
     if (!chore) {
