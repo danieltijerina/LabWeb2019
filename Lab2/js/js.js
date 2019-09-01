@@ -22,7 +22,7 @@ function addElement(chore) {
     span.append(text);
     node.append(input);
     node.append(span);
-    list.append(node);
+    list.prepend(node);
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
