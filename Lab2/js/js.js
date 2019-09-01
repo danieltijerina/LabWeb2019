@@ -6,10 +6,6 @@ function toggleCheck(element) {
     }
 }
 
-function test() {
-    alert("hi");
-}
-
 function addElement(chore) {
     let list = document.getElementById("items");
     let node = document.createElement("li");
