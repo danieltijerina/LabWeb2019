@@ -72,11 +72,11 @@ $(document).ready(function() {
 			  let text = document.createElement('p');
 			  text.innerHTML = nominee.artist;
 			  text.classList.add('description')
-			  nomineeLi.appendChild(artistText);
+			  nomineeLi.appendChild(text);
 		  }	
 
 		  if (nominee.info) {
-			  let nomineeInfo = document.createElement('p');
+			  let info = document.createElement('p');
 			  info.innerHTML = nominee.info;
 			  info.classList.add('description');
 			  nomineeLi.appendChild(nomineeInfo);
