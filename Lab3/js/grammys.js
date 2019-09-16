@@ -46,6 +46,44 @@ $(document).ready(function() {
 			  cat_desc.classList.add('description');
 			  nominees_section.append(cat_desc);
 		  }
+		  appendNominees(category.nominees, category.winner_id);
 	  });
+  }
+	
+  function appendNominees(nominees, winnerId) {
+	  let section = $('nominees_section');
+	  let nomineeList = document.createElement('ul');
+	  
+	  $.each(nominees, function(index, nominee) {
+		  let nomineeLi = document.createElement('li');
+
+		  let title = document.createElement('h4');
+		  title.innerText = nominee.nominee;
+		  nomineeLi.appendChild(title);
+
+		  if (index === winnerId) {
+			  title.classList.add('winner');
+			  let winnerText = document.createElement('span');
+			  winnerText.innerText = "WINNER";
+			  nomineeLi.appendChild(winnerText);
+		  }
+
+		  if (nominee.artist) {
+			  let text = document.createElement('p');
+			  text.innerHTML = nominee.artist;
+			  text.classList.add('description')
+			  nomineeLi.appendChild(artistText);
+		  }	
+
+		  if (nominee.info) {
+			  let nomineeInfo = document.createElement('p');
+			  info.innerHTML = nominee.info;
+			  info.classList.add('description');
+			  nomineeLi.appendChild(nomineeInfo);
+		  }
+		  
+		  nomineeList.append(nomineeLi);
+	  });
+	  section.append(nomineeList);
   }
 });
