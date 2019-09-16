@@ -27,6 +27,6 @@ $(document).ready(function() {
   });
 
   $('#category_types').on('change', function() {
-    console.log($(this).value);
+    console.log($(this).attr("value"));
   });
 });
