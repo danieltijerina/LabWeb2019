@@ -19,7 +19,10 @@ $(document).ready(function() {
         items.push("<option value='" + index + "'>" + value.field + "</option>");
       });
       $('#category_types').append(items);     
-    }
+    },
+	  error : function(errorMsg) {
+		  console.log(errorMsg);
+	  }
   });
 
   $('#category_types').on('change', function() {
