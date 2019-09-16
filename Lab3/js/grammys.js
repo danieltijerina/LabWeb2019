@@ -51,7 +51,7 @@ $(document).ready(function() {
   }
 	
   function appendNominees(nominees, winnerId) {
-	  let section = $('nominees_section');
+	  let section = $('#nominees_section');
 	  let nomineeList = document.createElement('ul');
 	  
 	  $.each(nominees, function(index, nominee) {
@@ -81,7 +81,7 @@ $(document).ready(function() {
 			  info.classList.add('description');
 			  nomineeLi.appendChild(info);
 		  }
-		  
+		  console.log(nomineeLi);
 		  nomineeList.append(nomineeLi);
 	  });
 	  section.append(nomineeList);
