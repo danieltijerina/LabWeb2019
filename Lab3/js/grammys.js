@@ -16,6 +16,7 @@ $(document).ready(function() {
       console.log(data);
       var items = [];
       $.each(data, function(index, value) {
+	console.log(value);
         items.push("<option value='" + index + "'>" + value.field + "</option>");
       });
       $('#category_types').append(items);     
