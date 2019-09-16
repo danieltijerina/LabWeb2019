@@ -32,8 +32,20 @@ $(document).ready(function() {
 	  if (field.description) {
 		  var desc = document.createElement('p');
 		  desc.innerHTML = field.description;
-		  desc.addClass('description');
+		  desc.classList.add('description');
 		  nominees_section.append(desc);
 	  }
+	  $.each(field.categories, function(index, category) {
+		  let cat_title = document.createElement('h3');
+		  cat_title.innerText = category.category_name
+		  nominees_section.append(cat_title);
+		  
+		  if(category.description) {
+			  var cat_desc = document.createElement('p');
+			  cat_desc.innerHTML = category.description;
+			  cat_desc.classList.add('description');
+			  nominees_section.append(cat_desc);
+		  }
+	  });
   }
 });
