@@ -10,15 +10,15 @@ $(document).ready(function() {
 	console.log(value);
         items.push("<option value='" + index + "'>" + value.field + "</option>");
       });
-      $('#category_types').append(items);     
+      $('#category_types').append(items);
+	    
+      $('#category_types').on('change', function() {
+        displaySection(data.fields[$(this).val()]);
+      });
     },
-	  error : function(errorMsg) {
-		  console.log(errorMsg);
-	  }
-  });
-
-  $('#category_types').on('change', function() {
-    displaySection(data.fields[$(this).val()]);
+    error : function(errorMsg) {
+      console.log(errorMsg);
+    }
   });
 	
   function displaySection(field) {
