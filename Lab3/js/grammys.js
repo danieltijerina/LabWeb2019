@@ -22,6 +22,18 @@ $(document).ready(function() {
   });
 	
   function displaySection(field) {
-    console.log(field);
+	  let section = $('#nominees_section');
+	  section.html('');
+	  
+	  let title = document.createElement('h2');
+	  title.innerText = field.field;
+	  nominees_section.append(title);
+
+	  if (field.description) {
+		  var desc = document.createElement('p');
+		  desc.innerHTML = field.description;
+		  desc.addClass('description');
+		  nominees_section.append(desc);
+	  }
   }
 });
