@@ -9,7 +9,7 @@ $(document).ready(function() {
   });*/
   
   $.ajax({
-    url: 'https://danieltijerina.github.io/LabWeb2019/Lab3/data/grammys.json',
+    url: 'https://mauriciogm97.github.io/ClaseWeb/lab3/data/grammys.json',
     type: 'GET',
     dataType: 'json',
     success: function(data) {
