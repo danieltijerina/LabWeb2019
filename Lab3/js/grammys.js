@@ -79,7 +79,7 @@ $(document).ready(function() {
 			  let info = document.createElement('p');
 			  info.innerHTML = nominee.info;
 			  info.classList.add('description');
-			  nomineeLi.appendChild(nomineeInfo);
+			  nomineeLi.appendChild(info);
 		  }
 		  
 		  nomineeList.append(nomineeLi);
