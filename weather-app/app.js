@@ -12,12 +12,17 @@ const getLatLon = function(city) {
 }
 
 const getWeather = function(center) {
-    const url = 'https://api.darksky.net/forecast/' + credentials.DARK_SKY_SECRET_KEY + '/' + center[0] + ',' + center[1] + '?units=si';
+    const url = 'https://api.darksky.net/forecast/' + credentials.DARK_SKY_SECRET_KEY + '/' + center[1] + ',' + center[0] + '?units=si';
 
     request({url, json: true}, function(err, response) {
         data = response.body['currently'];
         console.log(data['summary'] + '. ' + 'Currently at ' + Math.round(data['temperature']) + '°C. There is ' + data['precipProbability']*100 + '% precipitation probability.');
+        if(data['temperature'] <= 10) {
+            console.log("It's cold out, you should wear a sweater!");
+        } else if(data['temperature'] >= 20) {
+            console.log("It's warm out, stay hydrated!");
+        }
     });
 }
 
-getLatLon('Madrid');
+getLatLon('Oslo');
