@@ -5,7 +5,9 @@ const getLatLon = function(city, callback) {
     const url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + city + ".json?access_token=" + credentials.MAPBOX_TOKEN;
 
     request({url, json: true}, function(err, response){
-        if (response.body.message) {
+        if(err) {
+            callback(err, undefined);
+        } else if (response.body.message) {
             callback(response.body.message, undefined);
         } else if(!response.body['features'][0]) {
             callback('City not found', undefined);
@@ -21,7 +23,9 @@ const getWeather = function(center, callback) {
     const url = 'https://api.darksky.net/forecast/' + credentials.DARK_SKY_SECRET_KEY + '/' + center[1] + ',' + center[0] + '?units=si';
 
     request({url, json: true}, function(err, response) {
-        if(response.body['error']) {
+        if (err){
+            callback(err, undefined);
+        } else if(response.body['error']) {
             callback(response.body['error'], undefined)
         } else {
             data = response.body['currently'];
