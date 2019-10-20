@@ -1,4 +1,3 @@
-const credentials = require('./credentials');
 const express = require('express');
 const request = require('request');
 
@@ -9,6 +8,7 @@ if(process.env.NODE_ENV == 'production') {
     var mapbox_token = process.env.MAPBOX_TOKEN;
     var darksky_secret_key = process.env.DARK_SKY_SECRET_KEY;
 } else {
+    const credentials = require('./credentials');
     var mapbox_token = credentials.MAPBOX_TOKEN;
     var darksky_secret_key = credentials.DARK_SKY_SECRET_KEY; 
 }
