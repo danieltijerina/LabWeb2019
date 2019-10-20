@@ -5,7 +5,7 @@ const request = require('request');
 const app = express();
 const port = process.env.PORT || 3000
 
-app.get('/', function (req, res) {
+app.get('/weather', function (req, res) {
     if (!req.query.search) {
         res.send({
             error: 'Debe haber un parámetro "search"'
