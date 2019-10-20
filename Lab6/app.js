@@ -3,7 +3,15 @@ const express = require('express');
 const request = require('request');
 
 const app = express();
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
+
+if(process.env.NODE_ENV == 'production') {
+    var mapbox_token = process.env.MAPBOX_TOKEN;
+    var darksky_secret_key = process.env.DARK_SKY_SECRET_KEY;
+} else {
+    var mapbox_token = credentials.MAPBOX_TOKEN;
+    var darksky_secret_key = credentials.DARK_SKY_SECRET_KEY; 
+}
 
 app.get('/weather', function (req, res) {
     if (!req.query.search) {
@@ -40,7 +48,7 @@ app.get('*', function (req, res) {
 });
 
 const getLatLon = function (city, callback) {
-    const url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + city + ".json?access_token=" + credentials.MAPBOX_TOKEN;
+    const url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + city + ".json?access_token=" + mapbox_token;
 
     request({ url, json: true }, function (err, response) {
         if (err) {
@@ -58,7 +66,7 @@ const getLatLon = function (city, callback) {
 }
 
 const getWeather = function (center, callback) {
-    const url = 'https://api.darksky.net/forecast/' + credentials.DARK_SKY_SECRET_KEY + '/' + center[1] + ',' + center[0] + '?units=si';
+    const url = 'https://api.darksky.net/forecast/' + darksky_secret_key + '/' + center[1] + ',' + center[0] + '?units=si';
 
     request({ url, json: true }, function (err, response) {
         if (err) {
