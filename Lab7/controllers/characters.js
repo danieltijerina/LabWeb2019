@@ -42,7 +42,7 @@ const deletePerson = function(req, res) {
 const updatePerson = function(req, res) {
     _id = req.params.id
     data = req.body
-    Character.findByIdAndUpdate(_id, {name: data.name, age: data.age, born: data.born, allegiance: data.allegiance, titles: data.titles, father: data.father, mother: data.mother, spouse: data.spouse}).then(function(char) {
+    Character.findByIdAndUpdate(_id, {name: data.name, father: data.father, mother: data.mother}).then(function(char) {
         if(!char) {
             res.status(404).send({})
         }
