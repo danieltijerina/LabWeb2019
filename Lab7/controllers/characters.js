@@ -39,9 +39,23 @@ const deletePerson = function(req, res) {
     })
 }
 
+const updatePerson = function(req, res) {
+    _id = req.params.id
+    data = req.body
+    Character.findByIdAndUpdate(_id, {name: data.name, age: data.age, born: data.born, allegiance: data.allegiance, titles: data.titles, father: data.father, mother: data.mother, spouse: data.spouse}).then(function(char) {
+        if(!char) {
+            res.status(404).send({})
+        }
+        res.send(char)
+    }).catch(function(err) {
+        res.status(500).send(err)
+    })
+}
+
 module.exports = {
     createPerson,
     getPersons,
     getPerson,
-    deletePerson
+    deletePerson,
+    updatePerson
 }
