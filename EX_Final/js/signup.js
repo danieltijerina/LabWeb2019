@@ -18,8 +18,8 @@ $('#signup_button').on('click', function(){
   console.log(json_to_send);
 
   $.ajax({
-    url: 'http://localhost:3000/users',
-    // url: 'https://tuapp.herokuapp.com/users',
+    // url: 'http://localhost:3000/users',
+    url: 'https://powerful-bastion-78883.herokuapp.com/users',
     headers: {
         'Content-Type':'application/json'
     },
