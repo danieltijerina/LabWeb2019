@@ -9,7 +9,7 @@ var todos = document.querySelectorAll("input[type=checkbox]");
 function loadTodos() {
   $.ajax({
     // url: 'http://localhost:3000/todos',
-    url: 'https://powerful-bastion-78883.herokuapp.com/todos',
+    url: 'https://salty-retreat-96075.herokuapp.com/todos',
     headers: {
         'Content-Type':'application/json',
         'Authorization': 'Bearer ' + token
@@ -54,7 +54,7 @@ input.addEventListener('keypress', function (event) {
     json_to_send = JSON.stringify(json_to_send);
     $.ajax({
       // url: 'http://localhost:3000/todos',
-      url: 'https://powerful-bastion-78883.herokuapp.com/todos',
+      url: 'https://salty-retreat-96075.herokuapp.com/todos',
       headers: {
           'Content-Type':'application/json',
           'Authorization': 'Bearer ' + token

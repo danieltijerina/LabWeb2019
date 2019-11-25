@@ -19,7 +19,7 @@ $('#signup_button').on('click', function(){
 
   $.ajax({
     // url: 'http://localhost:3000/users',
-    url: 'https://powerful-bastion-78883.herokuapp.com/users',
+    url: 'https://salty-retreat-96075.herokuapp.com/users',
     headers: {
         'Content-Type':'application/json'
     },

@@ -12,7 +12,7 @@ $('#login_button').on('click', function(){
   console.log(json_to_send)
   $.ajax({
     // url: 'http://localhost:3000/login',
-    url: 'https://powerful-bastion-78883.herokuapp.com//login',
+    url: 'https://salty-retreat-96075.herokuapp.com/login',
     headers: {
         'Content-Type':'application/json'
     },
