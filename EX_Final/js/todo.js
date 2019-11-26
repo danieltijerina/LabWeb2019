@@ -96,3 +96,27 @@ function addTodo(id, todoText, completed) {
   node.append(span);
   list.prepend(node);
 }
+
+$('.navbar-elem').on('click', function(){
+  // cargar email y password de su html
+  let email = $('#email').val()
+  let password = $('#password').val()
+
+  $.ajax({
+    // url: 'http://localhost:3000/login',
+    url: 'https://salty-retreat-96075.herokuapp.com/logout',
+    headers: {
+      'Content-Type':'application/json',
+      'Authorization': 'Bearer ' + token
+    },
+    method: 'POST',
+    success: function(data){
+      // guardar token en localstorage o cookie
+      localStorage.removeItem('token')
+      window.location = './index.html'
+    },
+    error: function(error_msg) {
+      alert((error_msg["responseText"]))
+    }
+  })
+})
